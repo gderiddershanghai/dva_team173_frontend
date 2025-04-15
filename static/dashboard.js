@@ -4,7 +4,7 @@ import { correlationMargin, correlationWidth, correlationHeight, updateCorrelati
 import { tableMargin, tableWidth, tableHeight, updatePerformanceTable } from './performanceTable.js';
 import { wordBubbles } from './wordbubbles.js';
 
-
+// HELLOLOOO
 
 // Format date for display
 const formatDate = d3.timeFormat("%b %d, %Y");
@@ -120,11 +120,13 @@ async function loadStockData(symbol, updateGlobalState = true) {
       headers: {
         'Content-Type': 'application/json',
       },
+      
       body: JSON.stringify({
         stock_ticker: symbol,
         start_date: paddedStartDate,
         end_date: endDate
       })
+      ,console.log(symbol, paddedStartDate, endDate)
     });
     
     const rawData = await response.json();
@@ -313,6 +315,7 @@ function updateSliderPositions() {
 // Function to fetch data from the calculation API
 async function fetchCalculationData(symbol, startDate, endDate) {
   try {
+    console.log(symbol, startDate, endDate);
     const url = `${API_BASE_URL}/api/calculate`;
     
     // Use d3.json with a POST request
@@ -341,7 +344,7 @@ async function updateWordBubbles(ticker, startDate, endDate) {
   let links = [];
 
   try {
-    const response = await fetch("http://localhost:8001/api/word-bubbles", {
+    const response = await fetch(`${API_BASE_URL}/api/word-bubbles`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -374,9 +377,9 @@ async function updateWordBubbles(ticker, startDate, endDate) {
 
     try {
       const [topWords, bottomWords, adjMatrix] = await Promise.all([
-        d3.json("tmp_data/top_words.json"),
-        d3.json("tmp_data/bottom_words.json"),
-        d3.json("tmp_data/adjacency_matrix.json"),
+        d3.json("static/tmp_data/top_words.json"),
+        d3.json("static/tmp_data/bottom_words.json"),
+        d3.json("static/tmp_data/adjacency_matrix.json"),
       ]);
 
       wordData = [...topWords, ...bottomWords];
