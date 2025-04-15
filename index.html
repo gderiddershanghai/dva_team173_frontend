@@ -10,7 +10,6 @@
   <div id="dashboard">
     <!-- Top Row -->
     <div id="top-row">
-      <!-- Left: line Chart with Search Bar and Date Range Sliders -->
       <div id="line-container">
         <div id="controls">
           <div class="search-container">
@@ -19,8 +18,8 @@
           </div>
           <span id="stockName">Stock Name</span>
           <span id="priceRange">Low: -- High: --</span>
-          
-          <!-- Moving Average Controls -->
+
+          <!-- Moving Average Toggle -->
           <div class="ma-controls">
             <label class="toggle">
               <input type="checkbox" id="maToggle">
@@ -28,25 +27,14 @@
               <span class="toggle-label">Moving Avg</span>
             </label>
             <div class="ma-options">
-              <label>
-                <input type="radio" name="maType" value="7day" checked>
-                7 Days
-              </label>
-              <label>
-                <input type="radio" name="maType" value="14day">
-                14 Days
-              </label>
-              <label>
-                <input type="radio" name="maType" value="30day">
-                30 Days
-              </label>
-              <label>
-                <input type="radio" name="maType" value="90day">
-                90 Days
-              </label>
+              <label><input type="radio" name="maType" value="7day" checked> 7 Days</label>
+              <label><input type="radio" name="maType" value="14day"> 14 Days</label>
+              <label><input type="radio" name="maType" value="30day"> 30 Days</label>
+              <label><input type="radio" name="maType" value="90day"> 90 Days</label>
             </div>
           </div>
         </div>
+
         <div id="lineChart"></div>
         <div id="date-sliders">
           <div id="date-range-slider">
@@ -57,81 +45,49 @@
           </div>
         </div>
       </div>
-      
-      <!-- Right: Sentiment Analysis Bubbles -->
+
+      <!-- Right: Sentiment Bubbles -->
       <div id="sentiment-container">
         <div id="sentimentChart"></div>
-        <!-- FastAPI integration sample -->
-        <!-- 
-        fetch('/api/sentiment')
-          .then(response => response.json())
-          .then(data => { ... update sentiment bubbles ... });
-        -->
       </div>
     </div>
-    
+
     <!-- Bottom Row -->
     <div id="bottom-row">
-      <!-- Left: Correlation Section -->
+      <!-- Correlation Section -->
       <div id="correlation-container">
         <div id="correlation-info">
-          <span id="mostCorrelated">Most Correlated: Stock A (Score: 0.95)</span>
-          <span id="leastCorrelated">Least Correlated: Stock B (Score: -0.45)</span>
+          <span id="mostCorrelated">Most Correlated: --</span>
+          <span id="leastCorrelated">Least Correlated: --</span>
         </div>
         <div id="correlationChart"></div>
-        <!-- FastAPI integration sample -->
-        <!-- 
-        fetch('/api/correlation')
-          .then(response => response.json())
-          .then(data => { ... update correlation graphs ... });
-        -->
       </div>
-      
-      <!-- Right: Performance Comparison Table -->
+
+      <!-- Performance Table -->
       <div id="performance-table">
         <table>
           <thead>
             <tr>
               <th>Parameter</th>
               <th>Rank</th>
-              <th>SP500 Average</th>
+              <th>SP500 Avg</th>
             </tr>
           </thead>
           <tbody>
-            <!-- Sample data; later data will be fetched from FastAPI -->
-            <tr>
-              <td>Alpha</td>
-              <td>5</td>
-              <td>0.5</td>
-            </tr>
-            <tr>
-              <td>Beta</td>
-              <td>12</td>
-              <td>1.0</td>
-            </tr>
-            <tr>
-              <td>Sharpe Ratio</td>
-              <td>8</td>
-              <td>0.8</td>
-            </tr>
-            <tr>
-              <td>Treynor Ratio</td>
-              <td>3</td>
-              <td>0.3</td>
-            </tr>
+            <tr><td>Alpha</td><td>--</td><td>--</td></tr>
+            <tr><td>Beta</td><td>--</td><td>--</td></tr>
+            <tr><td>Sharpe Ratio</td><td>--</td><td>--</td></tr>
+            <tr><td>Treynor Ratio</td><td>--</td><td>--</td></tr>
           </tbody>
         </table>
-        <!-- Reserve for FastAPI integration -->
-        <!-- 
-        fetch('/api/performance')
-          .then(response => response.json())
-          .then(data => { ... update table ... });
-        -->
       </div>
     </div>
   </div>
-  <!-- Include d3.js -->
+
+  <!-- External Libraries -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Main Dashboard Logic -->
   <script type="module" src="./static/dashboard.js"></script>
 </body>
 </html>
