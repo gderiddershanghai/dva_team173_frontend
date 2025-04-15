@@ -113,7 +113,8 @@ async function loadStockData(symbol, updateGlobalState = true) {
     calculationStartDate.setDate(calculationStartDate.getDate() - CALCULATION_DAYS_BEFORE);
     const paddedStartDate = d3.timeFormat("%Y-%m-%d")(calculationStartDate);
     const endDate = d3.timeFormat("%Y-%m-%d")(DISPLAY_END_DATE);
-    
+    console.log('--------------------------------------')
+    console.log(symbol, paddedStartDate, endDate)
     // Fetch data from API
     const response = await fetch(url, {
       method: 'POST',
@@ -126,7 +127,7 @@ async function loadStockData(symbol, updateGlobalState = true) {
         start_date: paddedStartDate,
         end_date: endDate
       })
-      ,console.log(symbol, paddedStartDate, endDate)
+      
     });
     
     const rawData = await response.json();
