@@ -15,7 +15,8 @@ const DISPLAY_END_DATE = new Date(2020, 6, 31); // Jul 31, 2020
 const CALCULATION_DAYS_BEFORE = 90; // Data for calculation: 90 days before display start
 
 // API configuration
-const API_BASE_URL = "http://localhost:8001";
+const API_BASE_URL = "https://dva-api-urhl4viviq-uc.a.run.app"
+
 
 // Create SVG for the line chart
 const lineSvg = d3.select("#lineChart")
