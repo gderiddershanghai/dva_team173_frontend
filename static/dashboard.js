@@ -316,6 +316,9 @@ function updateSliderPositions() {
 // Function to fetch data from the calculation API
 async function fetchCalculationData(symbol, startDate, endDate) {
   try {
+
+    console.log('--------------------------------------')
+    // console.log(symbol, paddedStartDate, endDate)
     console.log(symbol, startDate, endDate);
     const url = `${API_BASE_URL}/api/calculate`;
     
