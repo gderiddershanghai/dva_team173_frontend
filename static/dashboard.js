@@ -1,8 +1,9 @@
 // Import modularized components
-import { lineMargin, lineWidth, lineHeight, drawlineChart } from './lineChart.js';
-import { correlationMargin, correlationWidth, correlationHeight, updateCorrelationChart } from './correlationChart.js';
-import { tableMargin, tableWidth, tableHeight, updatePerformanceTable } from './performanceTable.js';
-import { wordBubbles } from './wordbubbles.js';
+import { lineMargin, lineWidth, lineHeight, drawlineChart } from './static/lineChart.js';
+import { correlationMargin, correlationWidth, correlationHeight, updateCorrelationChart } from './static/correlationChart.js';
+import { tableMargin, tableWidth, tableHeight, updatePerformanceTable } from './static/performanceTable.js';
+import { wordBubbles } from './static/wordbubbles.js';
+
 
 // Format date for display
 const formatDate = d3.timeFormat("%b %d, %Y");
