@@ -10,6 +10,7 @@
   <div id="dashboard">
     <!-- Top Row -->
     <div id="top-row">
+      <!-- Left: line Chart with Search Bar and Date Range Sliders -->
       <div id="line-container">
         <div id="controls">
           <div class="search-container">
@@ -18,8 +19,8 @@
           </div>
           <span id="stockName">Stock Name</span>
           <span id="priceRange">Low: -- High: --</span>
-
-          <!-- Moving Average Toggle -->
+          
+          <!-- Moving Average Controls -->
           <div class="ma-controls">
             <label class="toggle">
               <input type="checkbox" id="maToggle">
@@ -27,14 +28,25 @@
               <span class="toggle-label">Moving Avg</span>
             </label>
             <div class="ma-options">
-              <label><input type="radio" name="maType" value="7day" checked> 7 Days</label>
-              <label><input type="radio" name="maType" value="14day"> 14 Days</label>
-              <label><input type="radio" name="maType" value="30day"> 30 Days</label>
-              <label><input type="radio" name="maType" value="90day"> 90 Days</label>
+              <label>
+                <input type="radio" name="maType" value="7day" checked>
+                7 Days
+              </label>
+              <label>
+                <input type="radio" name="maType" value="14day">
+                14 Days
+              </label>
+              <label>
+                <input type="radio" name="maType" value="30day">
+                30 Days
+              </label>
+              <label>
+                <input type="radio" name="maType" value="90day">
+                90 Days
+              </label>
             </div>
           </div>
         </div>
-
         <div id="lineChart"></div>
         <div id="date-sliders">
           <div id="date-range-slider">
@@ -45,49 +57,29 @@
           </div>
         </div>
       </div>
-
-      <!-- Right: Sentiment Bubbles -->
+      
+      <!-- Right: Sentiment Analysis Bubbles -->
       <div id="sentiment-container">
         <div id="sentimentChart"></div>
       </div>
     </div>
-
+    
     <!-- Bottom Row -->
     <div id="bottom-row">
-      <!-- Correlation Section -->
+      <!-- Left: Correlation Section -->
       <div id="correlation-container">
-        <div id="correlation-info">
-          <span id="mostCorrelated">Most Correlated: --</span>
-          <span id="leastCorrelated">Least Correlated: --</span>
-        </div>
         <div id="correlationChart"></div>
       </div>
-
-      <!-- Performance Table -->
+      
+      <!-- Right: Performance Comparison Table -->
       <div id="performance-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Parameter</th>
-              <th>Rank</th>
-              <th>SP500 Avg</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Alpha</td><td>--</td><td>--</td></tr>
-            <tr><td>Beta</td><td>--</td><td>--</td></tr>
-            <tr><td>Sharpe Ratio</td><td>--</td><td>--</td></tr>
-            <tr><td>Treynor Ratio</td><td>--</td><td>--</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
-
-  <!-- External Libraries -->
+  <!-- Include d3.js -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-
-  <!-- Main Dashboard Logic -->
   <script type="module" src="./static/dashboard.js"></script>
 </body>
 </html>
+
+
