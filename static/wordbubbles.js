@@ -498,8 +498,8 @@ export const wordBubbles = () => {
                 d.x = Math.max(margin.left + d.radius + strokeBuffer,
                                Math.min(width - margin.right - d.radius - strokeBuffer, d.x));
                 
-                const maxY = height - margin.bottom - d.radius - strokeBuffer - 10; // change so they dont sink to bottom
-                d.y = Math.max(margin.top + d.radius + strokeBuffer + 10, Math.min(maxY, d.y));
+                d.y = Math.max(margin.top + d.radius + strokeBuffer,
+                               Math.min(height - margin.bottom - d.radius - strokeBuffer, d.y));
                 
      
             
