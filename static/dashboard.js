@@ -215,7 +215,7 @@ async function loadStockData(symbol, updateGlobalState = true) {
     // Fallback to local data
     try {
       // Try to load data from local CSV file for the specific stock first
-      let csvFile = `tmp_data/${symbol}.csv`;
+      let csvFile = `static/tmp_data/${symbol}.csv`;
       let useDefault = false;
       
       try {
@@ -225,7 +225,7 @@ async function loadStockData(symbol, updateGlobalState = true) {
       } catch (fileError) {
         // If not available, fall back to DIS.csv
         useDefault = true;
-        csvFile = "tmp_data/DIS.csv";
+        csvFile = "static/tmp_data/DIS.csv";
         console.log(`Stock data for ${symbol} not available, using ${csvFile} instead`);
         
         // Show notification popup if not the default stock and we're updating global state
@@ -467,7 +467,7 @@ async function fetchCalculationData(symbol, startDate, endDate) {
     
     try {
       // Load performance data from JSON file
-      const performanceData = await d3.json("tmp_data/performance.json");
+      const performanceData = await d3.json("static/tmp_data/performance.json");
       
       // Extract correlation data from performance.json
       const correlationData = {
@@ -527,9 +527,9 @@ async function updateWordBubbles(ticker, startDate, endDate) {
 
     try {
       const [topWords, bottomWords, adjMatrix] = await Promise.all([
-        d3.json("tmp_data/top_words.json"),
-        d3.json("tmp_data/bottom_words.json"),
-        d3.json("tmp_data/adjacency_matrix.json"),
+        d3.json("static/tmp_data/top_words.json"),
+        d3.json("static/tmp_data/bottom_words.json"),
+        d3.json("static/tmp_data/adjacency_matrix.json"),
       ]);
 
       wordData = [...topWords, ...bottomWords];
