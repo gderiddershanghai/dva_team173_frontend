@@ -7,6 +7,7 @@ import { correlationMargin, correlationWidth, correlationHeight, updateCorrelati
 import { tableMargin, tableWidth, tableHeight, updatePerformanceTable } from './static/performanceTable.js';
 import { wordBubbles } from './static/wordbubbles.js';
 
+// why why why
 
 // Format date for display
 const formatDate = d3.timeFormat("%b %d, %Y");
