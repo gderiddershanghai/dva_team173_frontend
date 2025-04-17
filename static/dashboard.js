@@ -374,9 +374,9 @@ async function updateWordBubbles(ticker, startDate, endDate) {
 
     try {
       const [topWords, bottomWords, adjMatrix] = await Promise.all([
-        d3.json("tmp_data/top_words.json"),
-        d3.json("tmp_data/bottom_words.json"),
-        d3.json("tmp_data/adjacency_matrix.json"),
+        d3.json("./tmp_data/top_words.json"),
+        d3.json("./tmp_data/bottom_words.json"),
+        d3.json("./tmp_data/adjacency_matrix.json"),
       ]);
 
       wordData = [...topWords, ...bottomWords];
