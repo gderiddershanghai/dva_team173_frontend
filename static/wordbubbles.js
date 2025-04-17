@@ -242,7 +242,7 @@ export const wordBubbles = () => {
         const legendWidth = 250;
         const legendHeight = 20;
         const legendX = (width - legendWidth) / 2;  
-        const legendY = 5 //margin.top 
+        const legendY = margin.top 
 
         const spacing = 200 ////
 
