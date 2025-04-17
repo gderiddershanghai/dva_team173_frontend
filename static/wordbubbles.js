@@ -11,8 +11,8 @@ export const wordBubbles = () => {
     
     
     
-        let width = 1200;
-        let height = 700;
+        let width = 1300;
+        let height = 800;
         let data;
         let links = [];
         let margin = { top: 20, right: 20, bottom: 20, left: 20 };
