@@ -76,7 +76,7 @@ export const wordBubbles = () => {
             });
     
             const centerX = width / 2;
-            const centerY = height * .4;
+            const centerY = height * .2;
             processedData.forEach((d, i) => {
                 const angle = (i / processedData.length) * 2 * Math.PI;
                 const r = width * .5; // reduce!!
@@ -153,7 +153,7 @@ export const wordBubbles = () => {
                 .force('link', d3.forceLink(processedLinks).id(d => d.word)
                     .distance(d => 100 + Math.min(d.source.radius + d.target.radius, 100)))
                 .force('charge', d3.forceManyBody().strength(d => Math.min(d.charge, -350)))
-                .force('center', d3.forceCenter(width / 2, height * 0.7))
+                .force('center', d3.forceCenter(width / 2, height / 1.5))
                 .force('x', d3.forceX().strength(0.08))
                 .force('y', d3.forceY().strength(0.18))
                 .force('collision', d3.forceCollide().radius(d => d.radius +25)) // makes them spread out more
